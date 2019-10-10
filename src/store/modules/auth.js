@@ -1,7 +1,7 @@
 import * as types from 'src/store/mutation-types'
 import api from 'src/api'
 
-import router, { homePath, loginPath } from 'src/router'
+import router from 'src/router'
 
 export const state = () => ({
   isLoggedIn: false,
@@ -24,7 +24,7 @@ export const actions = {
     commit('LOGIN')
     commit('SET_USER_INFO', userInfo)
     
-    router.push(homePath)
+    router.push({ name: 'teacher-cabinet' })
     
     return userInfo
   }
